@@ -1,31 +1,21 @@
 <template>
   <div class="dashboard-container">
-    <component :is="currentRole" />
+    <iframe :src="videoUrl" width="100%" height="500" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import adminDashboard from './admin'
-import editorDashboard from './editor'
 
 export default {
   name: 'Dashboard',
-  components: { adminDashboard, editorDashboard },
   data() {
     return {
-      currentRole: 'adminDashboard'
+      videoUrl: 'https://open.umnet.cn/umrtc/#/videoMeeting?h=qaswedrf12&t=video&m=sfufirst&n=12'
     }
   },
   computed: {
-    ...mapGetters([
-      'roles'
-    ])
   },
   created() {
-    if (!this.roles.includes('admin')) {
-      this.currentRole = 'editorDashboard'
-    }
   }
 }
 </script>
