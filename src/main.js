@@ -20,6 +20,9 @@ import './utils/error-log' // error log
 
 import * as filters from './filters' // global filters
 
+// import UmVideo2 from 'umvideo2-client'
+// Vue.use(UmVideo2)
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
